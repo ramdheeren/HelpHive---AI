@@ -194,4 +194,4 @@ python compare_models.py
 
 ## License
 
-This project does not currently include a license file. Add one before public distribution or reuse if a repository-level license is already defined.
+This project is licensed under the MIT License. See the LICENSE file for details.
