@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Matching System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find Volunteers</h1>
+        
+        <!-- Volunteer search results section -->
+        <div id="search-results">
+            <h2>Matched Volunteers</h2>
+            <div id="volunteers-container" class="volunteers-grid"></div>
+        </div>
+        
+        <!-- Selected volunteers section -->
+        <div id="selected-volunteers">
+            <h2>Selected Volunteers</h2>
+            <div id="selected-container" class="selected-list"></div>
+            <button id="send-requests-btn" class="primary-btn">Send Help Requests</button>
+        </div>
+        
+        <!-- Request confirmation modal -->
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-content">
+                <h3>Request Sent!</h3>
+                <p>Your request has been sent to the selected volunteers.</p>
+                <p>You will be notified when they respond.</p>
+                <button id="close-modal-btn" class="secondary-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

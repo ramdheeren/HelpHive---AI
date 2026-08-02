@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Matching System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        body { 
+            background-color: #f8f9fc; 
+            text-align: center; 
+            padding: 15px; 
+        }
+
+        .container, .notification-container { 
+            max-width: 400px; 
+            margin: auto; 
+            padding: 15px; 
+            background: white; 
+            border-radius: 8px; 
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08); 
+            margin-bottom: 15px; 
+        }
+
+        h2 { 
+            color: #333; 
+            font-size: 18px; 
+            font-weight: 500; 
+        }
+
+        input, textarea, button { 
+            width: 100%; 
+            margin: 8px 0; 
+            padding: 8px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            font-size: 14px; 
+        }
+
+        button { 
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            font-weight: 500; 
+            transition: 0.3s; 
+            padding: 8px; 
+        }
+
+        button:hover { 
+            background-color: #45a049; 
+        }
+
+        .request-card { 
+            background: #fff; 
+            border: 1px solid #ddd; 
+            padding: 10px; 
+            border-radius: 5px; 
+            margin: 8px 0; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08); 
+        }
+
+        .btn-group { 
+            display: flex; 
+            justify-content: space-between; 
+        }
+
+        .accept, .reject { 
+            padding: 7px 12px; 
+            border-radius: 5px; 
+            font-size: 14px; 
+        }
+
+        .accept { 
+            background-color: #28a745; 
+            color: white; 
+        }
+
+        .reject { 
+            background-color: #dc3545; 
+            color: white; 
+        }
+
+        .notification { 
+            background: #e9f5ff; 
+            padding: 8px; 
+            border-left: 4px solid #007bff; 
+            margin: 6px 0; 
+            font-size: 14px; 
+        }  
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Need a Volunteer?</h2>
+        <form id="requestForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <textarea id="requestDetails" placeholder="Describe your need..." required></textarea>
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Volunteer Requests</h2>
+        <div id="requestsList"></div>
+    </div>
+
+    <div class="notification-container">
+        <h2>Notifications</h2>
+        <div id="notifications"></div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+
+</body>
+</html>

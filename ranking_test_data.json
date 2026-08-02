@@ -1,0 +1,112 @@
+[
+    {
+        "seeker_request": "My kitchen tap is leaking badly",
+        "providers": [
+            {"skills": "professional plumber for leak repair and bathroom fittings", "relevant": true},
+            {"skills": "waterproofing specialist with experience in leak repair", "relevant": true},
+            {"skills": "certified electrician for wiring and circuit repair", "relevant": false},
+            {"skills": "house cleaning, deep cleaning, sanitization", "relevant": false},
+            {"skills": "interior painting, wall painting, color consultation", "relevant": false},
+            {"skills": "carpentry, door repair", "relevant": false}
+        ]
+    },
+    {
+        "seeker_request": "I'm planning a surprise birthday party for my wife",
+        "providers": [
+            {"skills": "experienced party planner specializing in birthday events and balloon decoration", "relevant": true},
+            {"skills": "event management, catering coordination", "relevant": true},
+            {"skills": "party organization, venue setup, decoration", "relevant": true},
+            {"skills": "photography, candid shots, event photography", "relevant": false},
+            {"skills": "bridal makeup, hairstyling, beauty services", "relevant": false},
+            {"skills": "DJ, music mixing, sound system", "relevant": false}
+        ]
+    },
+    {
+        "seeker_request": "Need a photographer for our engagement ceremony",
+        "providers": [
+            {"skills": "experienced wedding photographer specializing in candid photography", "relevant": true},
+            {"skills": "product photography, studio photography", "relevant": true},
+            {"skills": "event decoration, flower arrangement", "relevant": false},
+            {"skills": "singing, performing, live shows", "relevant": false},
+            {"skills": "band performance, live music, stage show", "relevant": false},
+            {"skills": "makeup artist, styling", "relevant": false}
+        ]
+    },
+    {
+        "seeker_request": "My son needs help with class 12 physics",
+        "providers": [
+            {"skills": "physics academic mentor with IIT coaching experience", "relevant": true},
+            {"skills": "mathematics home tutor", "relevant": true},
+            {"skills": "English instructor, communication skills trainer", "relevant": false},
+            {"skills": "fitness trainer, diet planning, workout programs", "relevant": false},
+            {"skills": "piano teaching, keyboard lessons", "relevant": false},
+            {"skills": "yoga, meditation, flexibility training", "relevant": false}
+        ]
+    },
+    {
+        "seeker_request": "Bridal makeup for my wedding next month",
+        "providers": [
+            {"skills": "bridal makeup, hairstyling, beauty services", "relevant": true},
+            {"skills": "certified makeup artist, party styling", "relevant": true},
+            {"skills": "mehendi designer and henna artist", "relevant": true},
+            {"skills": "tailoring, dress designing", "relevant": false},
+            {"skills": "photography, photo editing, album design", "relevant": false},
+            {"skills": "event planning, decoration, stage setup", "relevant": false}
+        ]
+    },
+    {
+        "seeker_request": "I've been trying to lose weight and need a gym trainer",
+        "providers": [
+            {"skills": "fitness trainer, diet planning, workout programs", "relevant": true},
+            {"skills": "zumba, aerobics, dance fitness", "relevant": true},
+            {"skills": "physiotherapy, massage therapy", "relevant": false},
+            {"skills": "dance choreography, classical dance", "relevant": false},
+            {"skills": "singing, voice training", "relevant": false},
+            {"skills": "event management, coordination", "relevant": false}
+        ]
+    },
+    {
+        "seeker_request": "Want to get my living room repainted in light shades",
+        "providers": [
+            {"skills": "interior painting, wall painting, color consultation", "relevant": true},
+            {"skills": "texture painting, wall design, decorative painting", "relevant": true},
+            {"skills": "exterior house painter with ladder and scaffolding experience", "relevant": true},
+            {"skills": "cleaning, dusting, housekeeping", "relevant": false},
+            {"skills": "plumbing, pipe repair, tap fixing", "relevant": false},
+            {"skills": "glass fitting, window repair, carpentry", "relevant": false}
+        ]
+    },
+    {
+        "seeker_request": "Need a singer for my sister's sangeet night",
+        "providers": [
+            {"skills": "professional vocalist, live music performer", "relevant": true},
+            {"skills": "DJ, music mixing, sound system", "relevant": true},
+            {"skills": "tabla player, percussion, classical instrumentalist", "relevant": false},
+            {"skills": "dance choreography, classical dance", "relevant": false},
+            {"skills": "catering, food service", "relevant": false},
+            {"skills": "photography, videography", "relevant": false}
+        ]
+    },
+    {
+        "seeker_request": "Need an electrician urgently, there is a short circuit in my house",
+        "providers": [
+            {"skills": "certified electrician for wiring and circuit repair", "relevant": true},
+            {"skills": "switch repair, wiring, electrician", "relevant": true},
+            {"skills": "fan installation, electrical work", "relevant": true},
+            {"skills": "plumbing, pipe fitting", "relevant": false},
+            {"skills": "car mechanic, engine repair", "relevant": false},
+            {"skills": "house painting, exterior painting", "relevant": false}
+        ]
+    },
+    {
+        "seeker_request": "We need deep cleaning for our 2BHK before Diwali",
+        "providers": [
+            {"skills": "house cleaning, deep cleaning, sanitization", "relevant": true},
+            {"skills": "professional cleaning service for homes and offices", "relevant": true},
+            {"skills": "bathroom cleaning, kitchen cleaning, scrubbing", "relevant": true},
+            {"skills": "home painting, wall polish", "relevant": false},
+            {"skills": "event decoration, stage setup", "relevant": false},
+            {"skills": "waterproof painting, terrace coating", "relevant": false}
+        ]
+    }
+]

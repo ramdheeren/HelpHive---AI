@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Foldit:wght@100..900&family=Grechen+Fuemen&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Londrina+Solid:wght@100;300;400;900&family=Michroma&family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sedgwick+Ave+Display&family=Sigmar&display=swap" rel="stylesheet">
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap" async defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="MAIN.CSS">
+<title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+              <h1>HELP HIVE</h1>
+            </div>
+                <div class="main-text">
+                        <a>Requests</a>
+                    <a>Connect</a>
+                    <a>Profile</a>
+                    <a>Sign up</a>
+                </div>
+              <div class="nav-box">
+                <div class="txt1">
+                    <button><a href="">Premium</a></button>
+                </div>
+                <div class="txt2">
+              <a href="#"><i class="fa-regular fa-paper-plane"></i></a>
+              <h6>Hive-bot</h6>
+              </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="m1">
+            <h1>SEARCH-MATCH-HELP</h1>
+            <h5>FEEL GOOD - FEEL HIVE</h5>
+        </div>
+        <div class="m4">
+            <div class="m3-5">
+                <h3>Making innovations since 2025</h3>
+                <h6>Click on one of the two options according to yhour choice and start your journey with help hive.</h6>
+            </div>
+            <div class="d4">
+                <button><a href="">Volunteer Onboard</a></button>
+            </div>
+            <div class="d5">
+                <button><a href="">Seeker Onboard</a></button>
+            </div>
+        </div>
+<div class="m2">
+    <div class="container">
+        <h2>Select Your Preferred Location</h2>
+        
+        <input id="search-box" type="text" placeholder="Search for a place">
+        <div id="map"></div>
+        <button onclick="savePreferredLocation()">Save Preferred Location</button>
+        <button onclick="clearPreferredLocation()">Clear Preferred Location</button>
+
+        <h3>Preferred Location:</h3>
+        <p id="preferred-location">No preferred location saved.</p>
+    </div>
+</div>
+<div class="m3">
+    <div class="d1">
+    <i class="fa-solid fa-location-dot"></i>
+    <h1>20+</h1>
+    <h2>Cities Covered</h2>
+    <p>Across Panipat, Karnal, Sonipat, Rohtak</p>
+</div>
+<div class="d2">
+    <i class="fa-solid fa-user"></i>
+    <h1>1000+</h1>
+    <h2>Active Users</h2>
+    <p>They connect with the job seekers <br>and get opportunity</p>
+</div>
+<div class="d3">
+    <i class="fa-regular fa-building"></i>
+    <h1>50+</h1>
+    <h2>Visitor Companies</h2>
+    <p>Many startups and companies visit Help hive<br> for freelencing works</p>
+</div>
+</div>
+<div class="m5">
+    <div class="d6">
+        <a href="#">Explore more on Help hive -> </a>
+    </div>
+</div>
+<div class="m6">
+    <div class="d7">
+    <video autoplay loop muted infinite src="remndr.mp4"></video> 
+    </div>
+    <div class="d8">
+        <h1>One plateform, Endless options</h1>
+        <p> In a world driven by innovation and limitless possibilities, having a single platform that caters to diverse needs is more than just convenience—it's a revolution. Imagine a space where creativity meets efficiency, where every tool, resource, and solution is seamlessly integrated to empower individuals and businesses alike. This is not just a concept; it's a dynamic reality where boundaries dissolve, and opportunities expand beyond imagination. Whether you seek knowledge, collaboration, entertainment, or productivity, this platform adapts, evolves, and transforms to meet your ever-changing demands. No limitations, no compromises—just an ecosystem designed to fuel ambition, inspire progress, and unlock potential. Because when everything you need exists in one place, the possibilities are truly endless.</p>
+    </div>
+</div>
+    </main>
+    <footer>
+        <div class="nav-bottom">
+          <div class="d9" > 
+            <h1>HELP HIVE</h1>
+            <img src="logo.jpg">
+        </div>
+<div class="d10">
+    <ul>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Contact Us</a></li>
+        <li><a href="">Support</a></li>
+        <li><a href="">Career</a></li>
+    </ul>
+</div>
+<div class="d11">
+    <ul>
+        <li><a href="">Volunteers</a></li>
+        <li><a href="">Locations</a></li>
+        <li><a href="">Work Types</a></li>
+        <li><a href="">Specifications</a></li>
+    </ul>
+</div>
+<div class="d12">
+    <ul>
+        <li><a href="">Seekers</a></li>
+        <li><a href="">Opportunities</a></li>
+        <li><a href="">Companies</a></li>
+        <li><a href="">Payments</a></li>
+    </ul>
+</div>
+        </div>
+        <div class="nav-bottom1">
+            <div class="line"></div>
+           <div class="policy">
+            <div class="copyright">
+            <p>Copyright © 2025 Help Hive Pvt Ltd. All Copyrights Reserved.</p>
+        </div>
+        <div class="terms">
+        <a href="">Notices</a>
+        <a href="">Privacy Policy</a>
+        <a href="">Terms of service</a>
+    </div>
+           </div> 
+        </div>
+    
+    </footer>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

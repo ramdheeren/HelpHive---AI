@@ -1,0 +1,257 @@
+[
+    {
+        "seeker_request": "There is a crack in my bedroom wall that needs fixing",
+        "provider_skills": "house cleaning, mopping",
+        "label": 0
+    },
+    {
+        "seeker_request": "We need someone to set up a projector and screen for an outdoor movie night",
+        "provider_skills": "projector rental, home theatre installation, sound system wiring",
+        "label": 0
+    },
+    {
+        "seeker_request": "We need a drummer for a rock music night at our pub",
+        "provider_skills": "pub interior designer, bar counter setup, nightlife ambiance consultant",
+        "label": 0
+    },
+    {
+        "seeker_request": "Our company is hosting a product launch event for 200 guests next month",
+        "provider_skills": "corporate event management, AV coordination, guest registration systems",
+        "label": 1
+    },
+    {
+        "seeker_request": "The warehouse floor has oil stains that need industrial cleaning",
+        "provider_skills": "warehouse racking, pallet storage system, industrial shelving installation",
+        "label": 0
+    },
+    {
+        "seeker_request": "I want a baby shower organized at our home with pastel theme decorations",
+        "provider_skills": "baby shower planner, gender reveal setup, pastel balloon decoration and gifting ideas",
+        "label": 1
+    },
+    {
+        "seeker_request": "I want a cinematic video of our haldi ceremony",
+        "provider_skills": "wedding videographer, cinematic highlight reels, haldi and mehendi coverage",
+        "label": 1
+    },
+    {
+        "seeker_request": "I want a yoga teacher who can help with my chronic back pain",
+        "provider_skills": "orthopedic consultant, spine specialist, back surgery evaluation",
+        "label": 0
+    },
+    {
+        "seeker_request": "We need a beauty expert for the bridesmaids on the wedding day",
+        "provider_skills": "wedding planner, bridesmaid dress coordination, venue decoration",
+        "label": 0
+    },
+    {
+        "seeker_request": "We need the windows of our apartment washed inside and out",
+        "provider_skills": "window glass replacement, frame repair, aluminium fitting",
+        "label": 0
+    },
+    {
+        "seeker_request": "My parents' 25th wedding anniversary is coming up and I want to make it special",
+        "provider_skills": "anniversary celebration planner, silver jubilee theme decor, surprise element coordination",
+        "label": 1
+    },
+    {
+        "seeker_request": "The wooden doors and window frames have lost their polish and look dull",
+        "provider_skills": "wood polishing, door and window painting, varnish and lacquer application",
+        "label": 1
+    },
+    {
+        "seeker_request": "After renovation there is construction dust everywhere in the flat",
+        "provider_skills": "post-construction cleanup, dust removal, debris clearing, floor polishing",
+        "label": 1
+    },
+    {
+        "seeker_request": "My 14-year-old wants to start basic weight training under proper supervision",
+        "provider_skills": "teen fitness trainer, age-appropriate weight training, injury prevention for young athletes",
+        "label": 1
+    },
+    {
+        "seeker_request": "Can someone do drone shots of our farmhouse?",
+        "provider_skills": "house painting, exterior painting",
+        "label": 0
+    },
+    {
+        "seeker_request": "I need someone to film and photograph my dance recital this Sunday",
+        "provider_skills": "dance choreographer, Bollywood routine teacher, sangeet preparation",
+        "label": 0
+    },
+    {
+        "seeker_request": "I want to install a new ceiling fan in the bedroom",
+        "provider_skills": "fan installation, electrical work",
+        "label": 1
+    },
+    {
+        "seeker_request": "We are looking for a science tutor who can do practical experiments at home",
+        "provider_skills": "lab equipment supplier, chemistry glassware, school lab furniture",
+        "label": 0
+    },
+    {
+        "seeker_request": "We want a kickboxing instructor for Saturday morning sessions at the club",
+        "provider_skills": "boxing ring rental, sports equipment supplier, punch bag installation",
+        "label": 0
+    },
+    {
+        "seeker_request": "I want to train for a 10K run happening in three months",
+        "provider_skills": "running coach, marathon preparation, endurance training, pace strategy",
+        "label": 1
+    },
+    {
+        "seeker_request": "I want to learn data analysis and Excel for my office work",
+        "provider_skills": "MS Excel trainer, data analysis with pivot tables, corporate training sessions",
+        "label": 1
+    },
+    {
+        "seeker_request": "Can anyone do professional hair coloring at home?",
+        "provider_skills": "house painting, color mixing",
+        "label": 0
+    },
+    {
+        "seeker_request": "We need an electrician to fix the flickering tube light in the storeroom",
+        "provider_skills": "storeroom shelving, rack installation, storage organization",
+        "label": 0
+    },
+    {
+        "seeker_request": "I need someone to paint motivational quotes on the gym wall",
+        "provider_skills": "signboard painter, flex banner printing, hoarding installation",
+        "label": 0
+    },
+    {
+        "seeker_request": "I want a home facial and hair spa this Sunday",
+        "provider_skills": "skincare, facial, hair treatment",
+        "label": 1
+    },
+    {
+        "seeker_request": "My sister's engagement needs proper decoration",
+        "provider_skills": "photography, photo editing, album design",
+        "label": 0
+    },
+    {
+        "seeker_request": "The kitchen drain smells terrible, something is stuck inside",
+        "provider_skills": "interior wall painting, texture design, primer coating",
+        "label": 0
+    },
+    {
+        "seeker_request": "I want decorative fairy lights installed around the balcony permanently",
+        "provider_skills": "balcony garden design, planter installation, railing flower pots",
+        "label": 0
+    },
+    {
+        "seeker_request": "I have my engagement soon and want a nail art session",
+        "provider_skills": "carpentry, wood polishing",
+        "label": 0
+    },
+    {
+        "seeker_request": "We want professional food photos for our new restaurant menu",
+        "provider_skills": "food and beverage photographer, menu shoot specialist, overhead flat-lay styling",
+        "label": 1
+    },
+    {
+        "seeker_request": "Need yoga trainer near my home pls",
+        "provider_skills": "certified yoga trainer with home visit experience",
+        "label": 1
+    },
+    {
+        "seeker_request": "Our club wants to host a wine and cheese networking evening",
+        "provider_skills": "home bartending, cocktail mixing, drink presentation",
+        "label": 0
+    },
+    {
+        "seeker_request": "I'm planning a surprise birthday party for my wife",
+        "provider_skills": "experienced party planner specializing in birthday events and balloon decoration",
+        "label": 1
+    },
+    {
+        "seeker_request": "We want to install a backup generator with automatic switchover",
+        "provider_skills": "generator installation, automatic changeover switch, backup power systems",
+        "label": 1
+    },
+    {
+        "seeker_request": "Can someone play devotional songs at a Satyanarayan puja?",
+        "provider_skills": "flower decorator, puja samagri supplier, temple decoration",
+        "label": 0
+    },
+    {
+        "seeker_request": "I want to set up smart home switches in all the rooms",
+        "provider_skills": "smart switch installation, home automation wiring, IoT device setup",
+        "label": 1
+    },
+    {
+        "seeker_request": "Can someone come and do bathroom and kitchen deep clean?",
+        "provider_skills": "bathroom cleaning, kitchen cleaning, scrubbing",
+        "label": 1
+    },
+    {
+        "seeker_request": "Our temple trust wants a group of bhajan singers for a week-long event",
+        "provider_skills": "tent and shamiana rental, community hall booking, large event canopy",
+        "label": 0
+    },
+    {
+        "seeker_request": "Bridal makeup for my wedding next month",
+        "provider_skills": "bridal makeup, hairstyling, beauty services",
+        "label": 1
+    },
+    {
+        "seeker_request": "We want a grand theme-based decoration for our daughter's first birthday",
+        "provider_skills": "theme party specialist, balloon arches, custom backdrop design and setup",
+        "label": 1
+    },
+    {
+        "seeker_request": "The kitchen exhaust and chimney hood are so greasy they barely work",
+        "provider_skills": "kitchen chimney deep cleaning, exhaust filter degreasing, hood servicing",
+        "label": 1
+    },
+    {
+        "seeker_request": "Urgent help needed for a ceiling leak in my flat",
+        "provider_skills": "waterproofing specialist with experience in leak repair",
+        "label": 1
+    },
+    {
+        "seeker_request": "Our society is hosting a Bollywood night and we need a singer who knows retro songs",
+        "provider_skills": "Bollywood playback singer, retro and golden era medley, society event performer",
+        "label": 1
+    },
+    {
+        "seeker_request": "The air ducts and vents in our office are full of dust and need professional cleaning",
+        "provider_skills": "air duct cleaning, HVAC vent sanitization, indoor air quality improvement",
+        "label": 1
+    },
+    {
+        "seeker_request": "Can someone take before-and-after photos of our home renovation?",
+        "provider_skills": "home renovation contractor, false ceiling installation, modular kitchen fitting",
+        "label": 0
+    },
+    {
+        "seeker_request": "We want the entire apartment painted before handing it back to the landlord",
+        "provider_skills": "packers and movers, home shifting, furniture transportation",
+        "label": 0
+    },
+    {
+        "seeker_request": "Need a photograper for our engagement ceremony",
+        "provider_skills": "experienced wedding photographer specializing in candid photography",
+        "label": 1
+    },
+    {
+        "seeker_request": "My 4-year-old needs a preschool readiness tutor for phonics and numbers",
+        "provider_skills": "fitness instructor, kids sports coaching, outdoor activity organizer",
+        "label": 0
+    },
+    {
+        "seeker_request": "I would like to get my window glass replaced",
+        "provider_skills": "glass fitting, window repair, carpentry",
+        "label": 1
+    },
+    {
+        "seeker_request": "I'm preparing for the IELTS exam and need coaching for the speaking module",
+        "provider_skills": "IELTS speaking coach, band 7+ preparation, mock test conductor",
+        "label": 1
+    },
+    {
+        "seeker_request": "There are five of us who need party makeup done",
+        "provider_skills": "certified makeup artist, party styling",
+        "label": 1
+    }
+]
