@@ -2,15 +2,18 @@ import pymongo
 import os
 import certifi
 
-from utils import colors
-from dotenv import load_dotenv
+try:
+    from utils import colors
+except ImportError:
+    class colors:
+        OKGREEN = FAIL = ENDC = ''
+from dotenv import load_dotenv  # type: ignore[import-untyped]
 from pymongo.mongo_client import MongoClient
 
 
 load_dotenv()
 
-MONGO_PASSWORD = os.getenv("MONGO_PASSWORD")
-uri = f"mongodb+srv://helphive_devanshee:{MONGO_PASSWORD}@helphivedb.togtz.mongodb.net/?retryWrites=true&w=majority&appName=HelpHiveDB"
+uri = os.getenv("MONGODB_URI")
 
 client = MongoClient(uri, tlsCAFile=certifi.where())
 

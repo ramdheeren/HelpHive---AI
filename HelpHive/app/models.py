@@ -14,3 +14,6 @@ class User(UserMixin):
         self.radius = radius
         self.days = days
         self.location = location
+
+    def get_id(self):
+        return str(self.email)

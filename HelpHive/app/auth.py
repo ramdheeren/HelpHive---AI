@@ -18,6 +18,16 @@ def signup():
         first_name = request.form.get('first-name').capitalize()
         last_name = request.form.get('last-name').capitalize()
         goal = request.form.get('primary-goal')
+        form_data = {
+            'first-name': request.form.get('first-name'),
+            'last-name': request.form.get('last-name'),
+            'email': request.form.get('email'),
+            'phone': phone,
+            'primary-goal': goal,
+            'skills': request.form.get('skills'),
+            'radius': request.form.get('radius'),
+            'days': request.form.get('days')
+        }
         
         if goal == "volunteer":
             goal = 'True'
@@ -32,10 +42,10 @@ def signup():
             location = 'None'
             
         if db['users'].find_one({'email': email}):
-            return 'account-alerady-exists'
+            return render_template('signup.html', error_message='An account with this email already exists.', form_data=form_data)
         
         if password != re_password:
-            return 'bad-password-match'
+            return render_template('signup.html', error_message='Passwords do not match.', form_data=form_data)
         
         hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
         
@@ -63,36 +73,31 @@ def signup():
             is_volunteer=goal,
             skills=skills,
             radius=radius,
-            days=days
+            days=days,
+            location=location
         )
         
         login_user(user)
         
         return redirect(url_for('views.home'))
     
-    return 'Page under construction'
+    return render_template('signup.html', form_data={})
         
 
 
 @auth.route('/login/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        data = request.get_json()
-        lat = data.get('latitude')
-        lon = data.get('longitude')
-        
         email = request.form.get('email').lower()
         password = request.form.get('password')
         
         user_details = db['users'].find_one({'email': email})
 
         if not user_details:
-            return 'account-does-not-exist'
+            return render_template('login.html', error_message='An account with this email does not exist.', email=email)
         
-        hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
-        
-        if not check_password_hash(user_details['password'], hashed_password):
-            return 'bad-password'
+        if not check_password_hash(user_details['password'], password):
+            return render_template('login.html', error_message='Incorrect password. Please try again.', email=email)
         
         user = User(
             email=email,
@@ -104,13 +109,13 @@ def login():
             skills=user_details['skills'],
             radius=user_details['radius'],
             days=user_details['days'],
-            location=[lat, lon]
+            location=user_details['location']
         )
         login_user(user)
         
         return redirect(url_for('views.home'))
     
-    return 'Page under construction'
+    return render_template('login.html')
 
 
 @auth.route('/logout/')

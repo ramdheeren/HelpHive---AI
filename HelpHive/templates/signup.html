@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Hive Sign Up</title>
+    <style>
+        :root {
+            --lime: #92c83e;
+            --lime-dark: #709d27;
+            --black: #090909;
+            --white: #ffffff;
+            --muted: #b9b9b9;
+            --panel: #151515;
+            --border: #3b3b3b;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-width: 0;
+            min-height: 100vh;
+            margin: 0;
+            padding: clamp(1.5rem, 5vw, 4rem) 1rem;
+            background: var(--black);
+            color: var(--white);
+            font-family: "Raleway", sans-serif;
+        }
+
+        .signup-shell {
+            width: min(100%, 58rem);
+            margin: 0 auto;
+        }
+
+        .brand {
+            margin: 0 0 0.5rem;
+            color: var(--lime);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            letter-spacing: 0.08em;
+            text-align: center;
+        }
+
+        .intro {
+            margin: 0 0 2rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .error-message {
+            margin: 0 0 1.5rem;
+            padding: 0.9rem 1rem;
+            border-left: 4px solid var(--lime);
+            background: rgba(146, 200, 62, 0.12);
+            color: var(--white);
+        }
+
+        .signup-panel {
+            padding: clamp(1.25rem, 4vw, 3rem);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--lime);
+            background: var(--panel);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .field {
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        label,
+        legend {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        input,
+        select {
+            width: 100%;
+            min-height: 2.8rem;
+            padding: 0.75rem 0.85rem;
+            border: 1px solid var(--border);
+            border-radius: 0.35rem;
+            background: #0d0d0d;
+            color: var(--white);
+            font: inherit;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: var(--lime);
+            outline: 2px solid rgba(146, 200, 62, 0.25);
+        }
+
+        fieldset {
+            display: grid;
+            gap: 0.8rem;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .goal-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .goal-option {
+            display: flex;
+            flex: 1 1 10rem;
+            align-items: center;
+            gap: 0.6rem;
+            min-height: 3rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.35rem;
+            cursor: pointer;
+        }
+
+        .goal-option:has(input:checked) {
+            border-color: var(--lime);
+            color: var(--lime);
+        }
+
+        .goal-option input {
+            width: auto;
+            min-height: auto;
+            accent-color: var(--lime);
+        }
+
+        .volunteer-fields {
+            display: grid;
+            gap: 1.25rem;
+            padding-top: 0.25rem;
+        }
+
+        .volunteer-fields[hidden] {
+            display: none;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 0.5rem;
+        }
+
+        button,
+        .home-link {
+            display: inline-block;
+            min-height: 2.8rem;
+            padding: 0.8rem 1.25rem;
+            border-radius: 0.35rem;
+            font: inherit;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button {
+            border: 1px solid var(--lime);
+            background: var(--lime);
+            color: var(--black);
+        }
+
+        button:hover {
+            background: var(--lime-dark);
+            border-color: var(--lime-dark);
+        }
+
+        .home-link {
+            border: 1px solid var(--border);
+            color: var(--white);
+        }
+
+        .home-link:hover {
+            border-color: var(--lime);
+            color: var(--lime);
+        }
+
+        @media (max-width: 600px) {
+            .field-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .actions > * {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="signup-shell">
+        <h1 class="brand">HELP HIVE</h1>
+        <p class="intro">Create your account and choose how you want to join the hive.</p>
+
+        <section class="signup-panel" aria-labelledby="signup-title">
+            <h2 id="signup-title">Sign Up</h2>
+            {% if error_message %}
+                <p class="error-message" role="alert">{{ error_message }}</p>
+            {% endif %}
+            <form method="POST" action="/signup/">
+                <div class="field-grid">
+                    <div class="field">
+                        <label for="first-name">First Name</label>
+                        <input id="first-name" name="first-name" type="text" value="{{ form_data.get('first-name', '') }}" required>
+                    </div>
+                    <div class="field">
+                        <label for="last-name">Last Name</label>
+                        <input id="last-name" name="last-name" type="text" value="{{ form_data.get('last-name', '') }}" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" value="{{ form_data.get('email', '') }}" required>
+                    </div>
+                    <div class="field">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" value="{{ form_data.get('phone', '') }}" required>
+                    </div>
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" required>
+                    </div>
+                    <div class="field">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input id="confirm-password" name="confirm-password" type="password" required>
+                    </div>
+                </div>
+
+                <fieldset>
+                    <legend>Primary Goal</legend>
+                    <div class="goal-options">
+                        <label class="goal-option" for="volunteer">
+                            <input id="volunteer" name="primary-goal" type="radio" value="volunteer" {% if form_data.get('primary-goal') == 'volunteer' %}checked{% endif %} required>
+                            Volunteer
+                        </label>
+                        <label class="goal-option" for="seeker">
+                            <input id="seeker" name="primary-goal" type="radio" value="seeker" {% if form_data.get('primary-goal') == 'seeker' %}checked{% endif %}>
+                            Seeker
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div id="volunteer-fields" class="volunteer-fields" hidden>
+                    <div class="field">
+                        <label for="skills">Skills</label>
+                        <input id="skills" name="skills" type="text" value="{{ form_data.get('skills', '') }}">
+                    </div>
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="radius">Preferred Radius</label>
+                            <input id="radius" name="radius" type="text" value="{{ form_data.get('radius', '') }}">
+                        </div>
+                        <div class="field">
+                            <label for="days">Available Days</label>
+                            <input id="days" name="days" type="text" value="{{ form_data.get('days', '') }}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="submit">Sign Up</button>
+                    <a class="home-link" href="{{ url_for('views.home') }}">Back to Help Hive</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const goalInputs = document.querySelectorAll('input[name="primary-goal"]');
+        const volunteerFields = document.getElementById('volunteer-fields');
+
+        function updateVolunteerFields() {
+            const volunteerSelected = document.getElementById('volunteer').checked;
+            volunteerFields.hidden = !volunteerSelected;
+        }
+
+        goalInputs.forEach(input => input.addEventListener('change', updateVolunteerFields));
+        updateVolunteerFields();
+    </script>
+</body>
+</html>

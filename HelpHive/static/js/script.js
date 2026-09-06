@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://127.0.0.1:8000"; // Ensure backend URL consistency
+const API_BASE_URL = ""; // Ensure backend URL consistency
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -8,29 +8,43 @@ function getLocation() {
     }
 }
 
-function sendLocation(position) {
+async function sendLocation(position) {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
-    
-    fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ latitude: lat, longitude: lon })
-    })
-    .then(response => response.json());
-    // .then(data => {
-    //     document.getElementById("location").innerText = `Location saved: ${lat}, ${lon}`;
-    // });
+
+    try {
+        const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ latitude: lat, longitude: lon })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Location request failed: ${response.status}`);
+        }
+
+        await response.json();
+        document.getElementById("preferred-location").innerText = "Location saved successfully.";
+    } catch (error) {
+        document.getElementById("preferred-location").innerText = "Unable to save your location.";
+        console.error("Error saving location:", error);
+    }
 }
 
 function showError(error) {
-    alert("Error getting location: " + error.message);
+    const messages = {
+        1: "Location permission was denied.",
+        2: "Your location is currently unavailable.",
+        3: "Location request timed out."
+    };
+    document.getElementById("preferred-location").innerText = messages[error.code] || "Unable to get your location.";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("requestForm");
     const requestsList = document.getElementById("requestsList");
     const notificationsList = document.getElementById("notifications");
+    const matchesByRequestId = new Map();
 
     // ✅ Fetch stored requests from backend
     async function fetchRequests() {
@@ -72,7 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (!response.ok) throw new Error(`Failed to submit request: ${response.status}`);
-            
+
+            const responseData = await response.json();
+            displayMatches(responseData.request.id, responseData.matches || []);
             console.log("Request submitted successfully.");
             fetchRequests();
             form.reset();
@@ -82,6 +98,36 @@ document.addEventListener("DOMContentLoaded", function () {
             addNotification("❌ Error connecting to the server.");
         }
     });
+
+    function displayMatches(requestId, matches) {
+        matchesByRequestId.set(requestId, matches);
+    }
+
+    function appendMatches(requestCard, requestId) {
+        if (!matchesByRequestId.has(requestId)) return;
+
+        const matches = matchesByRequestId.get(requestId);
+        const matchSection = document.createElement("div");
+        matchSection.classList.add("notification");
+
+        if (!matches.length) {
+            matchSection.textContent = "No matching volunteers found.";
+            requestCard.appendChild(matchSection);
+            return;
+        }
+
+        const heading = document.createElement("p");
+        heading.textContent = "Matching volunteers:";
+        matchSection.appendChild(heading);
+
+        matches.forEach(match => {
+            const volunteer = document.createElement("p");
+            volunteer.textContent = `${match.first_name || ""} ${match.last_name || ""} | Skills: ${match.skills || "Not specified"} | Radius: ${match.radius || "Not specified"} | Days: ${match.days || "Not specified"}`;
+            matchSection.appendChild(volunteer);
+        });
+
+        requestCard.appendChild(matchSection);
+    }
 
     // ✅ Display requests in UI with event delegation
     function displayRequests(requests) {
@@ -97,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <button class="reject" data-id="${req.id}">Reject</button>
                 </div>
             `;
+            appendMatches(requestCard, req.id);
             requestsList.appendChild(requestCard);
         });
 

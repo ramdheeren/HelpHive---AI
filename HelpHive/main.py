@@ -1,11 +1,16 @@
 import flask
 import os
+import sys
+from pathlib import Path
 
 from app import db, views, auth, models
 from dotenv import load_dotenv
 from flask import Flask, request, jsonify
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 from flask_cors import CORS
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from bert_matching import find_matching_providers
 
 
 load_dotenv()
@@ -55,7 +60,27 @@ def get_requests():
         if 'name' in data and 'requestDetails' in data:
             new_request = {"id": len(requests_data) + 1, "name": data["name"], "requestDetails": data["requestDetails"]}
             requests_data.append(new_request)
-            return jsonify({"message": "Request added", "request": new_request}), 201
+
+            matches = []
+            if current_user.is_authenticated:
+                user_details = db["users"].find_one({"email": current_user.get_id()})
+                location = user_details.get("location") if user_details else None
+                if isinstance(location, dict):
+                    latitude = location.get("lat")
+                    longitude = location.get("lon")
+                    valid_location = (
+                        not isinstance(latitude, bool)
+                        and not isinstance(longitude, bool)
+                        and isinstance(latitude, (int, float))
+                        and isinstance(longitude, (int, float))
+                    )
+                    if valid_location:
+                        try:
+                            matches = find_matching_providers(data["requestDetails"], location)
+                        except Exception as error:
+                            print(f"Matcher error: {error}")
+
+            return jsonify({"message": "Request added", "request": new_request, "matches": matches}), 201
         return jsonify({"error": "Invalid request data"}), 400
     
     else:
